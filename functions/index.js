@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 const instagramToken = process.env.INSTAGRAM_ACCESS_TOKEN
 
 exports.handler = async () => {
