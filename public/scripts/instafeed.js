@@ -19,7 +19,7 @@
             debug: !1,
             error: null,
             filter: null,
-            limit: null,
+            limit: 1,
             mock: !1,
             render: null,
             sort: null,
