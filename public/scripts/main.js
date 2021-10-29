@@ -22,12 +22,10 @@ const fetchInsta = async () => {
     const data = await fetch('/.netlify/functions/index')
         .then((res) => res.json())
         .catch((err) => console.error(err));
-    console.log(data)
     var feed = new Instafeed({
-        accessToken: `${data}`
+        accessToken: data
     });
     feed.run();
-    // console.log(feed)
 }
 fetchInsta();
 
