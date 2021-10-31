@@ -1,18 +1,34 @@
-@media (min-width: 0em){
+@media (min-width: 0em) {
     #instafeed {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         place-items: center;
-        a {
-            max-width: 300px;
-            text-decoration: none;
-            img {
-                width: 300px;
+        grid-gap: 1rem;
+
+        .post {
+            display: grid;
+            grid-template-rows: 50% auto;
+            background-color: white;
+            box-shadow: $box-shadow;
+
+            .img {
+                width: 100%;
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
             }
-            p {
-                color: $primary;
+
+            .body {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 1rem;
             }
         }
+
     }
 }

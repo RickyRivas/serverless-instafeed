@@ -19,33 +19,21 @@ navOverlay.addEventListener('click', () => {
 })
 // Instagram 
 const fetchInsta = async () => {
-    const data = await fetch('/.netlify/functions/index')
+    const data = await fetch('/.netlify/functions/node-fetch')
         .then((res) => res.json())
         .catch((err) => console.error(err))
-    var feed = new Instafeed({
-        accessToken: data
-    });
-    feed.run();
+
+    //
+    const instafeedDiv = document.querySelector('#instafeed');
+    const template = document.querySelector('#post-template')
+
+    data.forEach((post) => {
+        const container = template.content.cloneNode(true);
+        container.querySelector('p').innerText = post.caption;
+        container.querySelector('img').src = post.url;
+        container.querySelector('h3').innerText = post.username
+        instafeedDiv.appendChild(container);
+    }) 
 }
 fetchInsta();
 
-
-// // Color theme toggle
-// const themeToggle = document.querySelector('.theme-toggle');
-// const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-// const currentTheme = localStorage.getItem('theme');
-
-// if (currentTheme == 'dark') {
-//     document.body.classList.toggle('dark-mode')
-// }
-
-// themeToggle.addEventListener('click', () => {
-//     if (prefersDarkTheme.matches) {
-//         document.body.classList.toggle('light-mode')
-//         var theme = document.body.classList.contains('light-mode') ? 'light' : 'dark'
-//     } else {
-//         document.body.classList.toggle('dark-mode');
-//         var theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light'
-//     }
-//     localStorage.setItem('theme', theme)
-// })
