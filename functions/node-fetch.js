@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('/node_modules/axios');
 
 exports.handler = function instagram(_, _, callback) {
 const token = process.env.INSTAGRAM_ACCESS_TOKEN;
