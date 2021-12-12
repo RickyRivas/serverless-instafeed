@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 exports.handler = function instagram(_, _, callback) {
-// const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-  const token = 'IGQVJXZATJabHVzSWlYRTJpektYVWpaelVPdWIxRDJ2OUFkeDNNSmdIOEpXUURCbkhWYWIzX1d0YkkzanlLeVNIY0RjeXRiLUFNR2ktQnRnVGhNU252Ql9IRkZAGQnV1RzFUMXNla2M1QWhWLVBtS1FvdwZDZD'
+const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  // const token = 'IGQVJXZATJabHVzSWlYRTJpektYVWpaelVPdWIxRDJ2OUFkeDNNSmdIOEpXUURCbkhWYWIzX1d0YkkzanlLeVNIY0RjeXRiLUFNR2ktQnRnVGhNU252Ql9IRkZAGQnV1RzFUMXNla2M1QWhWLVBtS1FvdwZDZD'
 const userId = 4226862094085798;
 const endpoint = 'https://graph.instagram.com';
 const fields = 'id,media_url,caption,username';
