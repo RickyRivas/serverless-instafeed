@@ -11,6 +11,7 @@
             grid-template-rows: 50% auto;
             background-color: white;
             box-shadow: $box-shadow;
+            position: relative;
 
             .img {
                 width: 100%;
@@ -22,11 +23,29 @@
             }
 
             .body {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                flex-direction: column;
                 padding: 1rem;
+                width: 100%;
+                position: relative;
+                
+                .username {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: $margin-md;
+                    img {
+                        width: 1.2rem;
+                        margin-right: $margin-sm;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+                .id {
+                    position: absolute;
+                    left: 1rem;
+                    bottom: 1rem;
+                }
             }
         }
 

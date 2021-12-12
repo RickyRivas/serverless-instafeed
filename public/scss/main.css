@@ -924,6 +924,7 @@ body.dark-mode .theme-toggle {
     background-color: white;
     -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    position: relative;
   }
   #instafeed .post .img {
     width: 100%;
@@ -935,20 +936,34 @@ body.dark-mode .theme-toggle {
     height: 100%;
   }
   #instafeed .post .body {
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+  }
+  #instafeed .post .body .username {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1rem;
+  }
+  #instafeed .post .body .username img {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  #instafeed .post .body .username p {
+    font-size: 1rem;
+  }
+  #instafeed .post .body .id {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
   }
 }
 

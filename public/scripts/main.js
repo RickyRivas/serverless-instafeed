@@ -1,4 +1,4 @@
-
+let instafeedDiv = document.querySelector('#instafeed');
 // Navigation 1
 const body = document.querySelector('body');
 const burger = document.querySelector(".hamburger");
@@ -21,19 +21,33 @@ navOverlay.addEventListener('click', () => {
 const fetchInsta = async () => {
     const data = await fetch('/.netlify/functions/node-fetch')
         .then((res) => res.json())
-        .catch((err) => console.error(err))
-
+        .catch((err) => alert(err))
+    console.log(data)
     //
-    const instafeedDiv = document.querySelector('#instafeed');
-    const template = document.querySelector('#post-template')
-
-    data.forEach((post) => {
-        const container = template.content.cloneNode(true);
-        container.querySelector('p').innerText = post.caption;
-        container.querySelector('img').src = post.url;
-        container.querySelector('h3').innerText = post.username
-        instafeedDiv.appendChild(container);
-    }) 
+    let result = '';
+    data.forEach(postData => {
+        console.log(postData)
+        if (!postData.caption) {
+            postData.caption = 'No caption was created for this post or user deleted the caption after post was created.'
+        }
+        result += `
+            <div class='post'>
+                <div class='img'>
+                    <img src=${postData.url} alt='' class=''>
+                </div>
+                <div class='body'>
+                    <div class='username'>
+                    <img src='assets/instagram.svg' alt class>
+                    <p>${postData.username}</p>
+                    </div>
+                <p>${postData.caption}</p>
+                <p class='id'>Post ID: ${postData.id}</p>
+                </div>
+            </div>
+        `
+        // Append to DOM
+        instafeedDiv.innerHTML = result
+    })
 }
 fetchInsta();
 
