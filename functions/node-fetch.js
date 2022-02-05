@@ -2,7 +2,7 @@ const axios = require("axios");
 
 exports.handler = function instagram(_, _, callback) {
   const token = process.env.INSTAGRAM_ACCESS_TOKEN;
-  const userId = 4226862094085798;
+  const userId = process.env.INSTAGRAM_USER_ID;
   const endpoint = "https://graph.instagram.com";
   const fields = "id,media_url,caption,username";
   const limit = 5;
